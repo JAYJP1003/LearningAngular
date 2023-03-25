@@ -1,0 +1,57 @@
+<!-- Interpolation -->
+<!-- {{ rooms.availableRooms }} -->
+
+<!-- json pipes -->
+<!-- {{roomsList | json}} -->
+
+<!-- Property Binding -->
+<!-- <h1 [textContent]="noOfRooms"></h1> -->
+
+<!-- <div [hidden] = "hideRooms">
+    <h2>Total Rooms available</h2>
+    <div [innerText]="noOfRooms"></div>
+</div> -->
+
+<!-- using *ngIf directive -->
+<!-- <div *ngIf=flag> -->
+
+<!-- {{hotelName}} -->
+<!-- <h1>{{headerComponent.title}}</h1> -->
+<app-header></app-header>
+<app-header></app-header>
+<app-header></app-header>
+
+
+<h1>Welcome to {{hotelName}}</h1>
+
+{{ selectedRooms | json }}
+
+<button
+  (click)="addRoom()">
+  AddRoom</button>
+
+
+
+<h2>{{headingForHidden}}</h2>
+<app-rooms-list
+  [rooms]="roomsList"
+  [headingForHidden]="headingForHidden"
+  (selectedRooms)="selectRoom($event)"
+  
+></app-rooms-list>
+
+<div [innerText]="noOfRooms"></div>
+<!-- </div> -->
+
+<!-- event Binding -->
+
+<button (click)="toggle()">Hide</button>
+<p>rooms works!</p>
+
+<!-- nullish Coalescing -->
+<!-- {{rooms?.availableRooms ?? "No rooms available"}} -->
+<!--
+ The ?. operator is used to safely access the availablerooms property of the rooms object. If rooms is null or undefined, the expression will short-circuit and return undefined, avoiding a runtime error.
+
+The ?? operator is the nullish coalescing operator, which provides a default value if the left-hand side of the expression is null or undefined. In this case, if availablerooms is null or undefined, the expression will return the string 'No rooms' as the default value.
+ -->
